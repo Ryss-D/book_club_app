@@ -2,5 +2,6 @@
     "helloWorld": "Hola mundo!",
     "@helloWorld": {
       "description": "Una descriocion"
-    }
+    },
+    "waiting": "Estamos preparando la libreria"
 }
