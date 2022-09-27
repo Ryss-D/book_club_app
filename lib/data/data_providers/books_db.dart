@@ -19,7 +19,7 @@ class DBHelper {
     );
   }
 
-  static Future<void> insert(String table, Map<String, Object> data) async {
+  Future<void> insert(String table, Map<String, Object> data) async {
     final db = await DBHelper.database();
     db.insert(
       table,
@@ -28,8 +28,8 @@ class DBHelper {
     );
   }
 
-  static Future<List<Map<String, dynamic>>> getData(String table) async {
+  Future<List<Map<String, dynamic>>> getData() async {
     final db = await DBHelper.database();
-    return db.query(table);
+    return db.query('books');
   }
 }

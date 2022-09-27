@@ -14,11 +14,7 @@ class HomeScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text(AppLocalizations.of(context)!.homeScreenTitle),
         ),
-        body: Column(
-          children: [
-            ReadingList(),
-          ],
-        ),
+        body: const ReadingList(),
         floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.search),
           onPressed: () {},

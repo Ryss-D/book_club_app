@@ -2,7 +2,7 @@ class BookDetails {
   final String title;
   final String subtitle;
   final String isbn;
-  final String authors;
+  final String author;
   final String numberOfPages;
   final String cover;
 
@@ -10,7 +10,7 @@ class BookDetails {
     required this.title,
     required this.isbn,
     required this.subtitle,
-    required this.authors,
+    required this.author,
     required this.numberOfPages,
     required this.cover,
   });
@@ -20,7 +20,7 @@ class BookDetails {
       title: json['title'],
       subtitle: json['subtitle'],
       isbn: json['isbns'][0],
-      authors: json['authors'][0]['name'],
+      author: json['authors'][0]['name'],
       numberOfPages: json['numberOfPages'],
       cover: json['cover']['small'],
     );

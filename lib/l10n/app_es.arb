@@ -4,5 +4,6 @@
       "description": "Una descriocion"
     },
     "waiting": "Estamos preparando la libreria",
-    "homeScreenTitle": "Tu lista de lectura"
+    "homeScreenTitle": "Tu lista de lectura",
+    "noFavorites": "Tu lista de lectura esta vacia"
 }
