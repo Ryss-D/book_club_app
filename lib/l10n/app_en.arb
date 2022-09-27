@@ -3,5 +3,6 @@
     "@helloWorld": {
       "description": "The conventional newborn programmer greeting"
     },
-    "waiting": "Library is setting up"
+    "waiting": "Library is setting up",
+    "homeScreenTitle": "Your reading list"
 }

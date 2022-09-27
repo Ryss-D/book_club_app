@@ -1,3 +1,4 @@
+import 'package:book_club_app/presentation/screens/home_screen.dart';
 import 'package:book_club_app/presentation/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         SplashScreen.routeName: (context) => const SplashScreen(),
+        HomeScreen.routeName: (context) => const HomeScreen(),
       },
     );
   }
