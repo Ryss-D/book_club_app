@@ -16,6 +16,10 @@ class SearchListItem extends StatelessWidget {
       child: ListTile(
         title: Text(title),
         subtitle: Text(author),
+        trailing: IconButton(
+          icon: const Icon(Icons.navigate_next),
+          onPressed: () {},
+        ),
       ),
       onTap: () {
         //TODO:implement detail screen navigation
