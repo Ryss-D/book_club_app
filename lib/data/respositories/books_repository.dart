@@ -1,13 +1,13 @@
 import 'package:book_club_app/data/data_providers/books_db.dart';
 import 'package:book_club_app/data/models/book_details.dart';
 
+import '../../injection.dart';
 import '../data_providers/books_api.dart';
 import '../models/book.dart';
 
 class BooksRepository {
-  //TODO: ENSURE DEPENDENCI INJECTION WITH GET IT
-  final BooksAPI api = BooksAPI();
-  final DBHelper db = DBHelper();
+  final BooksAPI api = getIt<BooksAPI>();
+  final DBHelper db = getIt<DBHelper>();
 
   Future<List<Book>> getBooks({required searchType, required criteria}) async {
     final rawBooks =

@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 
 import '../../data/models/book.dart';
 import '../../data/respositories/books_repository.dart';
+import '../../injection.dart';
 
 class Books with ChangeNotifier {
-  //TODO ensure injection dependentices
   final BooksRepository repository = BooksRepository();
   List<BookDetails> _favoriteBooks = <BookDetails>[];
   List<Book> _books = <Book>[];
