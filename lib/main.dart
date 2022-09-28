@@ -7,9 +7,11 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 
+import 'injection.dart';
 import 'presentation/screens/book_details_screen.dart';
 
 void main() {
+  setup();
   runApp(const MyApp());
 }
 
