@@ -1,3 +1,5 @@
+import '../contstants.dart';
+
 class BookDetails {
   final String title;
   final String subtitle;
@@ -17,12 +19,11 @@ class BookDetails {
 
   factory BookDetails.fromJson(json) {
     return BookDetails(
-      title: json['data']['title'],
-      subtitle: json['data']['subtitle'],
-      isbn: json['isbns'][0],
-      author: json['data']['authors'][0]['name'],
-      numberOfPages: json['data']['number_of_pages'].toString(),
-      cover: json['data']['cover']['small'],
-    );
+        title: json['data']['title'],
+        subtitle: json['data']['subtitle'] ?? noData,
+        isbn: json['isbns'][0] ?? noData,
+        author: json['data']['authors'][0]['name'] ?? noData,
+        numberOfPages: (json['data']['number_of_pages'] ?? noData).toString(),
+        cover: json['data']?['cover']?['medium'] ?? placeHolder);
   }
 }

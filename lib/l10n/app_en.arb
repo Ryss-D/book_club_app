@@ -12,6 +12,8 @@
     "no": "No",
     "author": "Author",
     "title": "Title",
+    "subtitle": "Subtitle",
+    "numberOfPages": "Number of pages",
     "titleHint": "Title name",
     "authorHint": "Author Name",
     "confirmation": "Are you sure?",

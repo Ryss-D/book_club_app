@@ -11,6 +11,8 @@
     "yes": "Si",
     "author": "Autor",
     "title": "Titulo",
+    "subtitle": "Subtitulo",
+    "numberOfPages": "Numero de paginas",
     "titleHint": "Nombre del titulo",
     "authorHint": "Nombre del autor",
     "no": "No",

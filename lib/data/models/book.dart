@@ -1,3 +1,5 @@
+import 'package:book_club_app/data/contstants.dart';
+
 class Book {
   final String title;
   final String authorName;
@@ -8,10 +10,8 @@ class Book {
   factory Book.fromJson(json) {
     return Book(
       title: json['title'],
-      authorName: json['author_name'] != null
-          ? json['author_name'][0]
-          : 'No authorin api',
-      isbn: json['isbn'] != null ? json['isbn'][0] : 'No isbn in api',
+      authorName: json['author_name']?[0] ?? noData,
+      isbn: json['isbn']?[0] ?? noData,
     );
   }
 }

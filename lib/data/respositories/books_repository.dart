@@ -23,11 +23,9 @@ class BooksRepository {
 
   Future<BookDetails> getBookDetails(isbn) async {
     final rawBook = await api.getRawBookDetails(isbn);
-    final first_coincidence = rawBook['records'].keys.toList()[0];
-    print(first_coincidence);
+    final firstCoincidence = rawBook?['records']?.keys.toList()?[0];
     final BookDetails book =
-        BookDetails.fromJson(rawBook['records'][first_coincidence]);
-    print(book);
+        BookDetails.fromJson(rawBook['records'][firstCoincidence]);
     return book;
   }
 
