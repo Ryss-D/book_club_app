@@ -42,11 +42,11 @@ class _SearchBoxState extends State<SearchBox> {
             hint: Text(AppLocalizations.of(context)!.typeHint),
             items: [
               DropdownMenuItem(
-                  child: Text(AppLocalizations.of(context)!.title),
-                  value: SearchType.Title),
+                  value: SearchType.Title,
+                  child: Text(AppLocalizations.of(context)!.title)),
               DropdownMenuItem(
-                  child: Text(AppLocalizations.of(context)!.author),
-                  value: SearchType.Author),
+                  value: SearchType.Author,
+                  child: Text(AppLocalizations.of(context)!.author)),
             ],
             onChanged: ((SearchType? value) {
               setState(() {

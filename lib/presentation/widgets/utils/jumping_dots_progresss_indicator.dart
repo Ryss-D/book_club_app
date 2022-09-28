@@ -36,7 +36,7 @@ class _JumpingDotsProgressIndicatorState
           }
         }));
       _widgets.add(Padding(
-        padding: EdgeInsets.only(right: 1.0),
+        padding: const EdgeInsets.only(right: 1.0),
         child: JumpingDot(
           animation: animations[i],
         ),
