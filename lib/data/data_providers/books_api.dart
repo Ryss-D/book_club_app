@@ -18,8 +18,9 @@ class BooksAPI {
     } else if (searchType == SearchType.Title) {
       url = Uri.parse(
           'http://openlibrary.org/search.json?title=$criteria&limit=100');
-    } else
+    } else {
       return;
+    }
 
     try {
       final response = await http.get(url);

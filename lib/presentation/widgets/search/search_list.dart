@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../logic/providers/books.dart';
-import '../utils/jumping_dots_progresss_indicator.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SearchList extends StatefulWidget {
