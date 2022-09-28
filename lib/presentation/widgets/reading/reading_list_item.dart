@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ReadingListItem extends StatelessWidget {
   final String title;
@@ -35,17 +36,18 @@ class ReadingListItem extends StatelessWidget {
         return showDialog(
             context: context,
             builder: (context) => AlertDialog(
-                  title: const Text('Are you sure?'),
-                  content: const Text('Do  you want to remove this post?'),
+                  title: Text(AppLocalizations.of(context)!.confirmation),
+                  content: Text(
+                      AppLocalizations.of(context)!.bookRemoveConfirmation),
                   actions: [
                     TextButton(
-                      child: const Text('No'),
+                      child: Text(AppLocalizations.of(context)!.no),
                       onPressed: () {
                         Navigator.of(context).pop(false);
                       },
                     ),
                     TextButton(
-                      child: const Text('Yes'),
+                      child: Text(AppLocalizations.of(context)!.yes),
                       onPressed: () {
                         Navigator.of(context).pop(true);
                       },

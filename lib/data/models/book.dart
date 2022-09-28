@@ -7,8 +7,11 @@ class Book {
 
   factory Book.fromJson(json) {
     return Book(
-        title: json['title'],
-        authorName: json['author_name'],
-        isbn: json['isbn']);
+      title: json['title'],
+      authorName: json['author_name'] != null
+          ? json['author_name'][0]
+          : 'No authorin api',
+      isbn: json['isbn'] != null ? json['isbn'][0] : 'No isbn in api',
+    );
   }
 }

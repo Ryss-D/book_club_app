@@ -10,7 +10,7 @@ class JumpingDotsProgressIndicator extends StatefulWidget {
   const JumpingDotsProgressIndicator({super.key, this.numberOfDots = 3});
 
   @override
-  _JumpingDotsProgressIndicatorState createState() =>
+  State<JumpingDotsProgressIndicator> createState() =>
       _JumpingDotsProgressIndicatorState();
 }
 
