@@ -31,4 +31,22 @@ class Books with ChangeNotifier {
         await repository.getBooks(searchType: searchType, criteria: criteria);
     notifyListeners();
   }
+
+  Future<BookDetails> fetchDetails(isbn) async {
+    final BookDetails bookDetails;
+    bookDetails = await repository.getBookDetails(isbn);
+    return bookDetails;
+  }
+
+  Future<void> addToReadingList(BookDetails book) async {
+    await repository.addBookToFavorites(book);
+    _favoriteBooks.add(book);
+    notifyListeners();
+  }
+
+  Future<void> removeBook(isbn) async {
+    await repository.removeBookFromFavorites(isbn);
+    _favoriteBooks.removeWhere((element) => element.isbn == isbn);
+    notifyListeners();
+  }
 }

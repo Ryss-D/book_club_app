@@ -14,7 +14,6 @@ class BooksRepository {
         await api.getRawBooks(searchType: searchType, criteria: criteria);
     final List<Book> books = <Book>[];
     rawBooks['docs'].forEach((book) {
-      print(book['title']);
       books.add(
         Book.fromJson(book),
       );
@@ -24,7 +23,11 @@ class BooksRepository {
 
   Future<BookDetails> getBookDetails(isbn) async {
     final rawBook = await api.getRawBookDetails(isbn);
-    final BookDetails book = BookDetails.fromJson(rawBook);
+    final first_coincidence = rawBook['records'].keys.toList()[0];
+    print(first_coincidence);
+    final BookDetails book =
+        BookDetails.fromJson(rawBook['records'][first_coincidence]);
+    print(book);
     return book;
   }
 
@@ -41,5 +44,20 @@ class BooksRepository {
               cover: book['cover'],
             ))
         .toList();
+  }
+
+  Future<void> addBookToFavorites(BookDetails book) async {
+    await db.insert({
+      'isbn': book.isbn,
+      'title': book.title,
+      'subtitle': book.subtitle,
+      'number_of_page': book.numberOfPages,
+      'author': book.author,
+      'cover': book.cover
+    });
+  }
+
+  Future<void> removeBookFromFavorites(isbn) async {
+    await db.remove(isbn);
   }
 }

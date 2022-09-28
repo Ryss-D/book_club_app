@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+
+import '../../../logic/providers/books.dart';
+import '../../screens/book_details_screen.dart';
 
 class ReadingListItem extends StatelessWidget {
   final String title;
@@ -56,7 +60,7 @@ class ReadingListItem extends StatelessWidget {
                 ));
       },
       onDismissed: (direction) {
-        //  Provider.of<Posts>(context, listen: false).removePost(postId);
+        Provider.of<Books>(context, listen: false).removeBook(isbn);
       },
       child: Card(
         margin: const EdgeInsets.symmetric(
@@ -71,11 +75,10 @@ class ReadingListItem extends StatelessWidget {
             title: Text(title),
             trailing: IconButton(
               icon: const Icon(Icons.navigate_next),
-              onPressed: () {},
-              //onPressed: () => Navigator.of(context).pushNamed(
-              //BookDetailScreen.routeName,
-              //arguments: isbn,
-              //),
+              onPressed: () => Navigator.of(context).pushNamed(
+                BookDetailsScreen.routeName,
+                arguments: isbn,
+              ),
             ),
           ),
         ),

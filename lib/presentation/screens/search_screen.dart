@@ -20,7 +20,7 @@ class _SearchScreenState extends State<SearchScreen> {
         appBar: AppBar(
           title: Text(AppLocalizations.of(context)!.searchScreenTitle),
         ),
-        body: SearchList(),
+        body: const SearchList(),
       ),
     );
   }

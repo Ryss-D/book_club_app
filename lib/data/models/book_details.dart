@@ -17,12 +17,12 @@ class BookDetails {
 
   factory BookDetails.fromJson(json) {
     return BookDetails(
-      title: json['title'],
-      subtitle: json['subtitle'],
+      title: json['data']['title'],
+      subtitle: json['data']['subtitle'],
       isbn: json['isbns'][0],
-      author: json['authors'][0]['name'],
-      numberOfPages: json['numberOfPages'],
-      cover: json['cover']['small'],
+      author: json['data']['authors'][0]['name'],
+      numberOfPages: json['data']['number_of_pages'].toString(),
+      cover: json['data']['cover']['small'],
     );
   }
 }

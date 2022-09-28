@@ -13,16 +13,16 @@ class DBHelper {
       //db file and didnt find anythings
       onCreate: (db, version) async {
         await db.execute(
-            'CREATE TABLE books(isbn TEXT PRIMARY KEY, title TEXT, author TEXT, number_of_pages TEXT, cover TEXT)');
+            'CREATE TABLE books(isbn TEXT PRIMARY KEY, title TEXT, subtitle TEXT, author TEXT, number_of_pages TEXT, cover TEXT)');
       },
       version: 1,
     );
   }
 
-  Future<void> insert(String table, Map<String, Object> data) async {
+  Future<void> insert(Map<String, Object> data) async {
     final db = await DBHelper.database();
     db.insert(
-      table,
+      'books',
       data,
       conflictAlgorithm: ConflictAlgorithm.replace,
     );
@@ -31,5 +31,10 @@ class DBHelper {
   Future<List<Map<String, dynamic>>> getData() async {
     final db = await DBHelper.database();
     return db.query('books');
+  }
+
+  Future<void> remove(String isbn) async {
+    final db = await DBHelper.database();
+    db.delete('books', where: 'isbn = ?', whereArgs: [isbn]);
   }
 }
