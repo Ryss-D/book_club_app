@@ -1,11 +1,11 @@
 import 'package:book_club_app/data/models/book_details.dart';
-import 'package:book_club_app/presentation/widgets/jumping_dots_progresss_indicator.dart';
-import 'package:book_club_app/presentation/widgets/reading_list_item.dart';
+import 'package:book_club_app/presentation/widgets/utils/jumping_dots_progresss_indicator.dart';
+import 'package:book_club_app/presentation/widgets/reading/reading_list_item.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../../logic/providers/books.dart';
+import '../../../logic/providers/books.dart';
 
 class ReadingList extends StatefulWidget {
   const ReadingList({super.key});
@@ -41,7 +41,8 @@ class _ReadingListState extends State<ReadingList> {
                         title: booksData.favoriteBooks[index].title,
                         cover: booksData.favoriteBooks[index].cover,
                         author: booksData.favoriteBooks[index].author,
-                        isbn: booksData.favoriteBooks[index].isbn))),
+                        isbn: booksData.favoriteBooks[index].isbn)),
+                  ),
           );
         }
       },

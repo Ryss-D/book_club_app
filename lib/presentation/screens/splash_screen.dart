@@ -1,4 +1,4 @@
-import 'package:book_club_app/presentation/widgets/jumping_dots_progresss_indicator.dart';
+import 'package:book_club_app/presentation/widgets/utils/jumping_dots_progresss_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

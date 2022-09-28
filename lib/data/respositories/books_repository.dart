@@ -9,10 +9,12 @@ class BooksRepository {
   final BooksAPI api = BooksAPI();
   final DBHelper db = DBHelper();
 
-  Future<List<Book>> getBooks(searchType, criteria) async {
-    final rawBooks = await api.getRawBooks(searchType, criteria);
-    final List<Book> books = [];
-    rawBooks.forEach((book) {
+  Future<List<Book>> getBooks({required searchType, required criteria}) async {
+    final rawBooks =
+        await api.getRawBooks(searchType: searchType, criteria: criteria);
+    final List<Book> books = <Book>[];
+    rawBooks['docs'].forEach((book) {
+      print(book['title']);
       books.add(
         Book.fromJson(book),
       );

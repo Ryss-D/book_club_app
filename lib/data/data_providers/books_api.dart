@@ -7,14 +7,17 @@ enum SearchType {
 }
 
 class BooksAPI {
-  Future getRawBooks(SearchType searchType, criteria) async {
+  Future getRawBooks(
+      {required SearchType searchType, required criteria}) async {
     criteria = prepare_criteria(criteria);
     final Uri url;
 
     if (searchType == SearchType.Author) {
-      url = Uri.parse('http://openlibrary.org/search.json?author=$criteria');
+      url = Uri.parse(
+          'http://openlibrary.org/search.json?author=$criteria&limit=100');
     } else if (searchType == SearchType.Title) {
-      url = Uri.parse('http://openlibrary.org/search.json?title=$criteria');
+      url = Uri.parse(
+          'http://openlibrary.org/search.json?title=$criteria&limit=100');
     } else
       return;
 
@@ -37,7 +40,7 @@ class BooksAPI {
     } catch (error) {}
   }
 
-  prepare_criteria(String criteria) {
+  String prepare_criteria(String criteria) {
     criteria = criteria.replaceAll(' ', '+');
     return criteria;
   }

@@ -5,5 +5,16 @@
     },
     "waiting": "Estamos preparando la libreria",
     "homeScreenTitle": "Tu lista de lectura",
-    "noFavorites": "Tu lista de lectura esta vacia"
+    "searchScreenTitle": "Zona de busqueda",
+    "noFavorites": "Tu lista de lectura esta vacia",
+    "noValueToSearch": "Empieza a escribir para buscar un nuevo libro",
+    "yes": "Si",
+    "author": "Autor",
+    "title": "Titulo",
+    "titleHint": "Nombre del titulo",
+    "authorHint": "Nombre del autor",
+    "no": "No",
+    "confirmation": "¿Estas seguro?",
+    "bookRemoveConfirmation": "¿Quieres eliminar este libro?",
+    "typeHint": "Tipo" 
 }

@@ -5,6 +5,17 @@
     },
     "waiting": "Library is setting up",
     "homeScreenTitle": "Your reading list",
-    "noFavorites": "Your reading list is empty"
+    "searchScreenTitle": "Seach zone",
+    "noFavorites": "Your reading list is empty",
+    "noValueToSearch": "Write to seach a new book",
+    "yes": "Yes",
+    "no": "No",
+    "author": "Author",
+    "title": "Title",
+    "titleHint": "Title name",
+    "authorHint": "Author Name",
+    "confirmation": "Are you sure?",
+    "bookRemoveConfirmation": "Do  you want to remove this book?",
+    "typeHint": "Type" 
 
 }
